@@ -1,6 +1,6 @@
 class Array
   def find_combination(size : Int)
-    self.combinations(size).select! { |comb| comb.sum == 2020 }.flatten
+    self.combinations(size).find(if_none = [0, 0]) { |comb| comb.sum == 2020 }
   end
 end
 
