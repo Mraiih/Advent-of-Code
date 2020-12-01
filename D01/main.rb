@@ -1,6 +1,6 @@
 class Array
   def find_combination(size)
-    self.combination(size).to_a.select { |comb| comb.sum == 2020 }.flatten
+    self.combination(size).find { |comb| comb.sum == 2020 }
   end
 end
 
