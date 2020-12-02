@@ -23,9 +23,8 @@ input = File.open('input').read.chars
 puts santa_delivery(input).count
 
 # PART TWO
-real_santa_moves = input.select.with_index { |_, i| i.odd? }
-robo_santa_moves = input.select.with_index { |_, i| i.even? }
-grid_real_santa = santa_delivery(real_santa_moves)
-grid_robo_santa = santa_delivery(robo_santa_moves)
+moves = input.partition.with_index { |_, i| i.odd? }
+real_santa = santa_delivery(moves[0])
+robo_santa = santa_delivery(moves[1])
 
-puts grid_real_santa.merge(grid_robo_santa).count
+puts real_santa.merge(robo_santa).count
